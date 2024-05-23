@@ -57,6 +57,27 @@ mobileAncors.forEach(ancor => {
 });
 
 
+const sendMessage = async (data, listSelector, successSelector) => {
+    const url = '/api/telegram';
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const json = await response.json();
+        if(json['err'] === 'none') {
+            listSelector.style.display = 'none';
+            successSelector.style.display = 'flex';
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+    }
+}
+
 document.querySelector('.recall-window__btn').onclick = () => {
     let name = document.getElementById('recall-window-person');
     let phone = document.getElementById('recall-window-number');
@@ -89,22 +110,9 @@ document.querySelector('.recall-window__btn').onclick = () => {
             phone: phone.value
         }
 
-        let json = JSON.stringify(data)
-        document.querySelector('.fancy-recall-box-wrapper').style.display = 'none';
-        document.querySelector('.fancy-recall-box-success').style.display = 'flex';
-
-
-        // const xhr = new XMLHttpRequest();
-        // xhr.onload = () => {
-        //     if (xhr.status == 200) { 
-        //         console.log(xhr.responseText);
-        //     } else {
-        //         console.log("Server response: ", xhr.statusText);
-        //     }
-        // };
-
-        // xhr.open("POST", "/telegram");
-        // xhr.send(json);
+        const listSelector = document.querySelector('.fancy-recall-box-wrapper')
+        const successSelector = document.querySelector('.fancy-recall-box-success')
+        sendMessage(data, listSelector, successSelector)
     }
 }
 
@@ -130,7 +138,7 @@ document.querySelector('.send-recall').onclick = () => {
         phone.parentNode.querySelector('.err-block').classList.remove('hidden')
         flag++
     }
-    
+
     let re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
     let validMail = re.test(email.value);
 
@@ -152,21 +160,8 @@ document.querySelector('.send-recall').onclick = () => {
             message: message.value
         }
 
-        let json = JSON.stringify(obj)
-
-        // const xhr = new XMLHttpRequest();
-        // xhr.onload = () => {
-        //     if (xhr.status == 200) { 
-        //         console.log(xhr.responseText);
-        //     } else {
-        //         console.log("Server response: ", xhr.statusText);
-        //     }
-        // };
-
-        // xhr.open("POST", "/telegram");
-        // xhr.send(json);
-
-        document.querySelector('.recall-block__input-list').style.display = 'none';
-        document.querySelector('.recall-block-success').style.display = 'flex';
+        const listSelector = document.querySelector('.recall-block__input-list')
+        const successSelector = document.querySelector('.recall-block-success')
+        sendMessage(obj, listSelector, successSelector)
     }
 }

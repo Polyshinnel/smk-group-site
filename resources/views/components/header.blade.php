@@ -18,7 +18,7 @@
 
                     <div class="email-geo__unit flex items-center ml-14 geo-item">
                         <img src="assets/img/header/geo.svg" alt="Smk-geo-icon">
-                        <p class="w-44 text-white ml-3 text-sm">г. Калуга ул. Кирпичная МПС д.15</p>
+                        <p class="w-44 text-white ml-3 text-sm">г. Калуга ул. Кирпичный завод МПС 15</p>
                     </div>
                     <!--/email-geo__unit-->
                 </div>

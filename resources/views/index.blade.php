@@ -187,7 +187,7 @@
 
                     <div class="geo-block flex items-center">
                         <img src="assets/img/contacts/geo.svg" alt="smk-geo-icon-green">
-                        <p class="ml-3">г. Калуга<br>ул. Кирпичная МПС 15</p>
+                        <p class="ml-3">г. Калуга<br>ул. Кирпичный завод МПС 15</p>
                     </div>
                     <!-- /.geo-block -->
 
