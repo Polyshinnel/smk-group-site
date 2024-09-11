@@ -95,7 +95,7 @@
         font-weight: 700;
         color: #fff;
     }
-    
+
     .line{
         height: 2px;
         width: 750px;
@@ -468,13 +468,13 @@
         cursor: pointer;
         color: #fff;
         border-radius: 5px;
-    
+
         transition: 0.3s all ease;
         &:hover{
             background: #0c6d09;
         }
     }
-    
+
 }
 
 @media(max-width:650px) {
@@ -529,7 +529,7 @@
             }
         }
     }
-    
+
     .adv-block{
         justify-content: center;
         row-gap: 30px;
@@ -677,5 +677,5 @@
             }
         }
     }
-    
+
 }

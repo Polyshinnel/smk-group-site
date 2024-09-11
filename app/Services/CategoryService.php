@@ -20,7 +20,8 @@ class CategoryService
                             'counter' => $counter,
                             'title' => $service->title,
                             'description' => $service->description,
-                            'price' => $service->price
+                            'price' => $service->price,
+                            'example' => $service->example
                         ];
                         $counter++;
                     }

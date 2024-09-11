@@ -100,7 +100,12 @@
                                             </div>
 
                                             <div class="service-item__footer">
-                                                <h4>от {{$service['price']}} руб</h4>
+                                                <h4>от {{$service['price']}}</h4>
+                                                @if($service['example'])
+                                                    <a href="{{$service['example']}}">
+                                                        <button class="service-item__btn">Образец</button>
+                                                    </a>
+                                                @endif
                                                 <button class="service-item__btn" data-fancybox data-src="#fancy-recall-box">Уточнить стоимость</button>
                                             </div>
                                         </div>

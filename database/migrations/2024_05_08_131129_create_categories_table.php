@@ -19,6 +19,30 @@ return new class extends Migration
             $table->string('category_title');
             $table->timestamps();
         });
+
+        $dataItems = [
+            [
+                'name' => 'iso',
+                'id_name' => 'iso',
+                'class_name' => 'service-block-1',
+                'category_title' => 'УСЛУГИ ПО ISO И СМК'
+            ],
+            [
+                'name' => 'smk',
+                'id_name' => 'smk',
+                'class_name' => 'service-block-2',
+                'category_title' => 'АУТСОРСИНГ СМК'
+            ],
+            [
+                'name' => 'tr-ts',
+                'id_name' => 'tr-ts',
+                'class_name' => 'service-block-3',
+                'category_title' => 'СЕРТИФИКАТЫ И ДЕКЛАРАЦИИ О СООТВЕТСВИИ ПРОДУКЦИИ'
+            ],
+        ];
+        foreach ($dataItems as $item) {
+            DB::table('categories')->insert($item);
+        }
     }
 
     /**
