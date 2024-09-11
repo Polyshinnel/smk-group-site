@@ -183,6 +183,64 @@
 
             <section class="info-section contacts-section py-14" id="contacts">
                 <div class="info-section__title">
+                    <h2>КЛИЕНТЫ</h2>
+                    <div class="line"></div>
+                </div>
+
+                <div class="clients-block">
+                    <div class="client-item">
+                        <div class="client-item__img">
+                            <img src="/assets/img/clients/1.jpg" alt="">
+                        </div>
+                        <p>Гренадер</p>
+                    </div>
+
+                    <div class="client-item">
+                        <div class="client-item__img">
+                            <img src="/assets/img/clients/2.png" alt="">
+                        </div>
+                        <p>Хлебный Спас</p>
+                    </div>
+
+                    <div class="client-item">
+                        <div class="client-item__img">
+                            <img src="/assets/img/clients/3.png" alt="">
+                        </div>
+                        <p>Галантус</p>
+                    </div>
+
+                    <div class="client-item">
+                        <div class="client-item__img">
+                            <img src="/assets/img/clients/4.jpg" alt="">
+                        </div>
+                        <p>И-Продакт</p>
+                    </div>
+
+                    <div class="client-item">
+                        <div class="client-item__img">
+                            <img src="/assets/img/clients/5.svg" alt="">
+                        </div>
+                        <p>Эконива</p>
+                    </div>
+
+                    <div class="client-item">
+                        <div class="client-item__img">
+                            <img src="/assets/img/clients/6.png" alt="">
+                        </div>
+                        <p>Итера</p>
+                    </div>
+
+                    <div class="client-item">
+                        <div class="client-item__img">
+                            <img src="/assets/img/clients/7.png" alt="">
+                        </div>
+                        <p>Ермолино-молоко</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section contacts-section py-14" id="contacts">
+                <div class="info-section__title">
                     <h2>КОНТАКТЫ</h2>
                     <div class="line"></div>
                 </div>
