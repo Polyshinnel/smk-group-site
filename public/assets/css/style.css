@@ -911,6 +911,13 @@ video {
   background: var(--header-color);
 }
 
+.personal-link{
+    color: #fff;
+    display: flex;
+    margin-left: 15px;
+    text-decoration: underline;
+}
+
 .recall-btn{
   background: var(--primary-color);
   transition: 0.3s all ease;
@@ -1299,8 +1306,16 @@ video {
     right: 21px;
     cursor: pointer;
   }
+
+  .personal-mobile-link{
+      margin-top: 20px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 300;
+  }
   ul{
-    margin-top: 10px;
     li{
       text-align: center;
       font-size: 24px;
@@ -1534,4 +1549,8 @@ video {
       }
     }
   }
+
+    .personal-link{
+        display: none;
+    }
 }

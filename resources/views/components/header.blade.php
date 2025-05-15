@@ -33,6 +33,8 @@
 
                     <a href="tel:+79029326244" class="header-phone text-white font-semibold ml-7">+7 902 932 62 44</a>
 
+                    <a href="/lk" class="personal-link">Личный кабинет</a>
+
                     <button class="recall-btn text-white py-2 px-4 rounded text-xs ml-7 cursor-pointer" data-fancybox data-src="#fancy-recall-box">Перезвоните мне</button>
 
                     <button class="menu-btn hidden">
@@ -69,6 +71,7 @@
         </button>
         <div class="mob-menu__wrapper">
             <img src="assets/img/logo.webp" alt="Смк Сервис">
+            <a href="/lk" class="personal-mobile-link">Личный кабинет</a>
             <ul>
                 <li><a href="#iso">ISO</a></li>
                 <li><a href="#smk">СМК</a></li>
