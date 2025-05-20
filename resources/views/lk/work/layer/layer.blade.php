@@ -52,6 +52,11 @@
         .nav-link:hover {
             background-color: #f5f5f5;
         }
+        .nav-link.active {
+            background-color: #e8f5e9;
+            color: #0E8309;
+            font-weight: 500;
+        }
         .nav-link.logout {
             margin-top: auto;
             color: #e74c3c;
@@ -72,13 +77,13 @@
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="/lk/main" class="nav-link">Главная</a>
+                        <a href="/lk/main" class="nav-link {{ request()->is('lk/main') ? 'active' : '' }}">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/lk/bill" class="nav-link">Счета</a>
+                        <a href="/lk/bill" class="nav-link {{ request()->is('lk/bill') ? 'active' : '' }}">Счета</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/lk/result" class="nav-link">Результаты исследований</a>
+                        <a href="/lk/result" class="nav-link {{ request()->is('lk/result') ? 'active' : '' }}">Результаты исследований</a>
                     </li>
                 </ul>
             </nav>

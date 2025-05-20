@@ -6,6 +6,7 @@ use App\Http\Controllers\Lk\LogoutController;
 use App\Http\Controllers\Lk\Main\BillPageController;
 use App\Http\Controllers\Lk\Main\MainPageController;
 use App\Http\Controllers\Lk\Main\ResultPageController;
+use App\Http\Controllers\Lk\Main\ResultShowPage;
 use App\Http\Controllers\Lk\RegisterController;
 use App\Http\Controllers\TelegramController;
 use Illuminate\Support\Facades\Route;
@@ -44,5 +45,6 @@ Route::middleware(['check.user.session'])->group(function () {
     Route::get('/lk/main', MainPageController::class);
     Route::get('/lk/bill', BillPageController::class);
     Route::get('/lk/result', ResultPageController::class);
+    Route::get('/lk/result/{result_id}', ResultShowPage::class);
     Route::get('/lk/logout', LogoutController::class);
 });
