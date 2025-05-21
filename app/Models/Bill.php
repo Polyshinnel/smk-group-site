@@ -16,4 +16,9 @@ class Bill extends Model
     {
         return $this->hasOne(BillStatus::class, 'id', 'status_id');
     }
+
+    public function user(): HasOne
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

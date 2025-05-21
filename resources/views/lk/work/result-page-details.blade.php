@@ -11,7 +11,7 @@
             <div class="no-results">Нет доступных результатов</div>
         @else
             @foreach($researchResults as $result)
-                <a href="{{ asset($result->filepath) }}" download class="result-card">
+                <a href="/storage/{{ asset($result->filepath) }}" download class="result-card">
                     <h3 class="result-name">{{ $result->name }}</h3>
                     <p class="result-research">Исследование №{{ $result->research_id }}</p>
                     <p class="result-date">{{ $result->created_at->format('d.m.Y') }}</p>

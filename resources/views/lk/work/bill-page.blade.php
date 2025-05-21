@@ -11,7 +11,7 @@
             <div class="no-bills">Нет выставленных счетов</div>
         @else
             @foreach($userBills as $bill)
-                <a href="{{ asset($bill->filepath) }}" download class="bill-card" style="border-left: 4px solid {{ $bill->billStatus->color }}">
+                <a href="/storage/{{ asset($bill->filepath) }}" download class="bill-card" style="border-left: 4px solid {{ $bill->billStatus->color }}">
                     <h3 class="bill-name">{{ $bill->name }}</h3>
                     <p class="bill-number">№ {{ $bill->bill_number }}</p>
                     <p class="bill-date">{{ $bill->created_at->format('d.m.Y') }}</p>
