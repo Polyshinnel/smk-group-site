@@ -15,6 +15,7 @@ use App\MoonShine\Resources\UserResource;
 use App\MoonShine\Resources\BillResource;
 use App\MoonShine\Resources\ResearchResource;
 use App\MoonShine\Resources\ResearchResultResource;
+use App\MoonShine\Resources\ClosedDocumentsResource;
 
 class MoonShineServiceProvider extends ServiceProvider
 {
@@ -35,6 +36,7 @@ class MoonShineServiceProvider extends ServiceProvider
                 BillResource::class,
                 ResearchResource::class,
                 ResearchResultResource::class,
+                ClosedDocumentsResource::class,
             ])
             ->pages([
                 ...$config->getPages(),

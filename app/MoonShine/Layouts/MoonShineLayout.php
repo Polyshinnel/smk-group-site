@@ -35,6 +35,7 @@ use MoonShine\MenuManager\MenuItem;
 use App\MoonShine\Resources\BillResource;
 use App\MoonShine\Resources\ResearchResource;
 use App\MoonShine\Resources\ResearchResultResource;
+use App\MoonShine\Resources\ClosedDocumentsResource;
 
 final class MoonShineLayout extends AppLayout
 {
@@ -51,7 +52,9 @@ final class MoonShineLayout extends AppLayout
             MenuItem::make('Пользователь', UserResource::class),
             MenuItem::make('Счета', BillResource::class),
             MenuItem::make('Исследования', ResearchResource::class),
+            MenuItem::make('Закрывающие документы', ClosedDocumentsResource::class),
             ...parent::menu(),
+
         ];
     }
 

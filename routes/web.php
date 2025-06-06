@@ -4,6 +4,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Lk\AuthController;
 use App\Http\Controllers\Lk\LogoutController;
 use App\Http\Controllers\Lk\Main\BillPageController;
+use App\Http\Controllers\Lk\Main\ClosedDocumentsPage;
 use App\Http\Controllers\Lk\Main\MainPageController;
 use App\Http\Controllers\Lk\Main\ResultPageController;
 use App\Http\Controllers\Lk\Main\ResultShowPage;
@@ -47,4 +48,5 @@ Route::middleware(['check.user.session'])->group(function () {
     Route::get('/lk/result', ResultPageController::class);
     Route::get('/lk/result/{result_id}', ResultShowPage::class);
     Route::get('/lk/logout', LogoutController::class);
+    Route::get('/lk/closed-documents', ClosedDocumentsPage::class);
 });

@@ -3,34 +3,80 @@
 @section('description', $pageInfo['description'])
 
 @section('content')
-<div class="results-container">
-    <h1 class="results-title">Результаты исследования</h1>
-    
-    <div class="results-grid">
-        @if($researchResults->isEmpty())
-            <div class="no-results">Нет доступных результатов</div>
-        @else
-            @foreach($researchResults as $result)
-                <a href="/storage/{{ asset($result->filepath) }}" download class="result-card">
-                    <h3 class="result-name">{{ $result->name }}</h3>
-                    <p class="result-research">Исследование №{{ $result->research_id }}</p>
-                    <p class="result-date">{{ $result->created_at->format('d.m.Y') }}</p>
-                </a>
-            @endforeach
-        @endif
+<div class="page-container">
+    <!-- Секция счетов -->
+    <div class="section-container">
+        <h2 class="section-title">Счета</h2>
+        <div class="results-grid">
+            @if($invoices->isEmpty())
+                <div class="no-results">Нет доступных счетов</div>
+            @else
+                @foreach($invoices as $invoice)
+                    <a href="/storage/{{ $invoice->filepath }}" download class="result-card">
+                        <h3 class="result-name">{{ $invoice->name }}</h3>
+                        <p class="result-research">Счет №{{ $invoice->number }}</p>
+                        <p class="result-date">{{ $invoice->created_at->format('d.m.Y') }}</p>
+                        <p class="result-status">Статус: {{ $invoice->billStatus->name }}</p>
+                    </a>
+                @endforeach
+            @endif
+        </div>
+    </div>
+
+    <!-- Секция результатов -->
+    <div class="section-container">
+        <h2 class="section-title">Результаты исследования</h2>
+        <div class="results-grid">
+            @if($researchResults->isEmpty())
+                <div class="no-results">Нет доступных результатов</div>
+            @else
+                @foreach($researchResults as $result)
+                    <a href="/storage/{{ $result->filepath }}" download class="result-card">
+                        <h3 class="result-name">{{ $result->name }}</h3>
+                        <p class="result-research">Исследование №{{ $result->research_id }}</p>
+                        <p class="result-date">{{ $result->created_at->format('d.m.Y') }}</p>
+                    </a>
+                @endforeach
+            @endif
+        </div>
+    </div>
+
+    <!-- Секция закрывающих документов -->
+    <div class="section-container">
+        <h2 class="section-title">Закрывающие документы</h2>
+        <div class="results-grid">
+            @if($closingDocuments->isEmpty())
+                <div class="no-results">Нет доступных закрывающих документов</div>
+            @else
+                @foreach($closingDocuments as $document)
+                    <a href="/storage/{{ $document->filepath }}" download class="result-card">
+                        <h3 class="result-name">{{ $document->name }}</h3>
+                        <p class="result-research">Исследование №{{ $document->research->id }}</p>
+                        <p class="result-date">{{ $document->created_at->format('d.m.Y') }}</p>
+                    </a>
+                @endforeach
+            @endif
+        </div>
     </div>
 </div>
 
 <style>
-    .results-container {
+    .page-container {
         max-width: 1200px;
         padding: 20px 20px 20px 0;
     }
 
-    .results-title {
+    .section-container {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 20px;
+        color: #333;
+        border-bottom: 2px solid #4CAF50;
+        padding-bottom: 10px;
     }
 
     .results-grid {
@@ -70,7 +116,13 @@
     .result-date {
         color: #888;
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+    }
+
+    .result-status {
+        color: #4CAF50;
+        font-size: 14px;
+        font-weight: 500;
     }
 
     .no-results {

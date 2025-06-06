@@ -11,11 +11,7 @@
             <div class="no-results">Нет доступных результатов исследований</div>
         @else
             @foreach($researchResult as $result)
-                @if($result->status->researched)
-                    <a href="/lk/result/{{ $result->id }}" class="result-card" style="border-left: 4px solid {{ $result->status->color ?? '#4CAF50' }}">
-                @else
-                    <div class="result-card" style="border-left: 4px solid {{ $result->status->color ?? '#4CAF50' }}">
-                @endif
+                <a href="/lk/result/{{ $result->id }}" class="result-card" style="border-left: 4px solid {{ $result->status->color ?? '#4CAF50' }}">
                     <h3 class="result-name">{{ $result->name }}</h3>
                     <p class="result-number">№ {{ $result->id }}</p>
                     <p class="result-date">{{ $result->created_at->format('d.m.Y') }}</p>
@@ -23,11 +19,7 @@
                           style="background-color: {{ $result->status->color ?? '#4CAF50' }}20; color: {{ $result->status->color ?? '#4CAF50' }}">
                         {{ $result->status->name ?? 'Завершено' }}
                     </span>
-                @if($result->status->researched)
-                    </a>
-                @else
-                    </div>
-                @endif
+                </a>
             @endforeach
         @endif
     </div>

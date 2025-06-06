@@ -83,8 +83,12 @@
                         <a href="/lk/bill" class="nav-link {{ request()->is('lk/bill') ? 'active' : '' }}">Счета</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/lk/result" class="nav-link {{ request()->is('lk/result') ? 'active' : '' }}">Результаты исследований</a>
+                        <a href="/lk/closed-documents" class="nav-link {{ request()->is('lk/closed-documents') ? 'active' : '' }}">Закрывающие документы</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/lk/result" class="nav-link {{ request()->is('lk/result') ? 'active' : '' }}">Заказы</a>
+                    </li>
+                    
                 </ul>
             </nav>
             <a href="/lk/logout" class="nav-link logout">Выход</a>
